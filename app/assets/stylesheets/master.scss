@@ -32,3 +32,33 @@ body {
   font-family: 'quicksandbold_italic', sans-serif;
   font-size: 26px;
 }
+
+p {
+  font-size: 15px;
+}
+
+.pagination > li > a {
+  background-color: white;
+  color: black;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #D56A0A;
+  background-color: #E3E0DA;
+  border-color: #CFCDC9;
+}
+
+.pagination > .active > a {
+  color: black !Important;
+  background-color: #D56A0A !Important;
+  border: solid 1px black !Important;
+}
+
+.pagination > li.active > a:hover {
+  color: white;
+  background-color: #D56A0A;
+  border: solid 1px #D56A0A;
+}
