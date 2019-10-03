@@ -64,3 +64,40 @@ p {
   background-color: #D56A0A;
   border: solid 1px #D56A0A;
 }
+
+.email > input:focus,
+.password > input:focus {
+  border-color: black;
+}
+
+.email > input,
+.password > input {
+  border-color: #8E8E8E;
+}
+
+.btn-primary {
+  background-color: #D56A0A;
+  border-color: black;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #D56A0A;
+  border-color: white;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid black;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #E9E9E9 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
