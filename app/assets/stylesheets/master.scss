@@ -87,6 +87,12 @@ p {
   color: white;
 }
 
+.btn-primary:focus {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
