@@ -7,18 +7,26 @@ include Pagy::Backend
     @pagy, @places = pagy(Place.all, items: 3)
   end
 
+
   def new
     @place = Place.new
   end
 
+
   def create
     current_user.places.create(place_params)
-    redirect_to root_path
+    if @place.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
 
   def show
     @place = Place.find(params[:id])
   end
+
 
   def edit
     @place = Place.find(params[:id])
@@ -28,6 +36,7 @@ include Pagy::Backend
     end
   end
 
+
   def update
     @place = Place.find(params[:id])
 
@@ -36,8 +45,13 @@ include Pagy::Backend
     end
 
     @place.update_attributes(place_params)
-    redirect_to place_path
+    if @place.valid?
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
+
 
   def destroy
     @place = Place.find(params[:id])
@@ -49,10 +63,12 @@ include Pagy::Backend
     redirect_to root_path
   end
 
+
   private
 
   def place_params
     params.require(:place).permit(:name, :description, :address)
   end
+
 
 end
