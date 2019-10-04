@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 include Pagy::Backend
 
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @pagy, @places = pagy(Place.all, items: 3)
@@ -28,6 +28,12 @@ include Pagy::Backend
     @place = Place.find(params[:id])
     @place.update_attributes(place_params)
     redirect_to place_path
+  end
+
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    redirect_to root_path
   end
 
   private
