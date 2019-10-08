@@ -79,18 +79,42 @@ p {
   background-color: #D56A0A;
   border-color: black;
   color: black;
+  font-weight: bold;
 }
 
 .btn-primary:hover {
   background-color: #D56A0A;
   border-color: white;
   color: white;
+  font-weight: bold;
 }
 
 .btn-primary:focus {
   background-color: white;
   border-color: black;
   color: black;
+  font-weight: bold;
+}
+
+.btn-danger {
+  background-color: #C62C12;
+  border-color: black;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background-color: #C62C12;
+  border-color: white;
+  color: white;
+  font-weight: bold;
+}
+
+btn-danger:focus {
+  background-color: white;
+  border-color: black;
+  color: black;
+  font-weight: bold;
 }
 
 input:-webkit-autofill,
@@ -116,4 +140,8 @@ html, body {
    height: 100%;
     margin: 0;
    padding: 0;
+}
+
+.clear {
+  clear: both;
 }
