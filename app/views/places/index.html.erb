@@ -15,10 +15,23 @@
           <% if place.comments.last.humanized_rating.present? %>
             <b><%= place.comments.last.humanized_rating %></b>
           <% end %>
-          <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
           <%= place.comments.last.message %>
-          <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
           <small>-<%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
+    <% if place.photos.present? %>
+      <div class="col-12">
+        <% if place.photos.last.present? %>
+          <%= image_tag place.photos.last.picture.to_s, class: "index-image-size" %>
+        <% end %>
+        <br />
+        <blockquote class= "caption">
+           <%= place.photos.last.caption %>
+           <br />
+           <small>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp- <%= place.photos.last.user.email %></small>
         </blockquote>
       </div>
     <% end %>
