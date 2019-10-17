@@ -1,4 +1,4 @@
-class PhotoController < ApplicationController
+class PhotosController < ApplicationController
   before_action :authenticate_user!
 
   def create
@@ -10,6 +10,6 @@ class PhotoController < ApplicationController
   private
 
   def comment_params
-    params.require(:photo).permit(:caption)
+    params.require(:photo).permit(:picture, :caption)
   end
 end
