@@ -5,7 +5,7 @@ class NotificationMailer < ApplicationMailer
     @place_owner = @place.user
 
     mail(to: @place_owner.email,
-      subject: "A comment has been added to your restaurant listing.")
+      subject: "Someone has left a comment on #{@place.name}'s page.")
   end
 
 end
