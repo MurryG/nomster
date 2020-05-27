@@ -4,7 +4,7 @@ include Pagy::Backend
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @pagy, @places = pagy(Place.all, items: 10)
+    @pagy, @places = pagy(Place.all, items: 3)
   end
 
 
